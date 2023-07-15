@@ -17,7 +17,6 @@ body {
   background-color: #fff;
   padding: 50px;
   border-radius: 16px;
-  min-height: 700px;
 }
 .homeContainer {
   display: flex;
