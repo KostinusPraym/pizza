@@ -41,12 +41,13 @@ const Home: React.FC = () => {
     textForSearch,
   } = useSelector(filterSelector);
 
-  const searchDelay = React.useCallback(
+  const searchDelay = React.useMemo(
+    () => 
     debounce((str: string) => {
       dispatch(setTextForSearch(str));
     }, 350),
-    [dispatch, debounce, setTextForSearch]
-  );
+    [dispatch]
+  )
 
   // //get data with query string
   React.useEffect(() => {
