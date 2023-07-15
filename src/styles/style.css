@@ -13,7 +13,8 @@ body {
   margin: 0 auto;
   background-color: #fff;
   padding: 50px;
-  border-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 .homeContainer {
   display: flex;
@@ -49,9 +50,11 @@ body {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .container{
     padding: 25px;
+    border-radius: 0px;
+
   }
 
   body {
