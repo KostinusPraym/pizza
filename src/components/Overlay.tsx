@@ -30,7 +30,7 @@ const Overlay: React.FC<OverlayProps> = ({ showMenuMobile }) => {
             return (
               <li
                 key={item}
-                className={`${styles.categoryItem} ${
+                className={`${styles.categoryItemOverlay} ${
                   categoryIndex === index ? styles.active : ""
                 }`}
                 onClick={() => clickOnCategory(index)}

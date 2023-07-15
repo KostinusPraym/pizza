@@ -42,12 +42,12 @@ const Home: React.FC = () => {
   } = useSelector(filterSelector);
 
   const searchDelay = React.useMemo(
-    () => 
-    debounce((str: string) => {
-      dispatch(setTextForSearch(str));
-    }, 350),
+    () =>
+      debounce((str: string) => {
+        dispatch(setTextForSearch(str));
+      }, 350),
     [dispatch]
-  )
+  );
 
   // //get data with query string
   React.useEffect(() => {
@@ -97,7 +97,9 @@ const Home: React.FC = () => {
   }, [categoryIndex, sortOptions, currentPage, textForSearch, navigate]);
 
   const showMenuMobile = () => {
-    dispatch(setMobileMenu(!mobileMenu));
+    if (document.body.clientWidth <= 1024) {
+      dispatch(setMobileMenu(!mobileMenu));
+    }
   };
 
   if (status === Status.ERROR) return <Error />;

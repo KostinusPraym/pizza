@@ -12,6 +12,13 @@
   cursor: pointer;
 }
 
+.categoryItemOverlay {
+  padding: 13px 16px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
 .active {
   color: white;
   background-color: #282828;

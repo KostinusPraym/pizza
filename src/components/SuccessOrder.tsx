@@ -1,6 +1,6 @@
 import React from "react";
 import { CartEmpty_TYPE } from "../types/types";
-import styles from "../styles/successOrder.module.scss";
+import styles from "../styles/SuccessOrder.module.scss";
 
 type SuccessOrderProps = CartEmpty_TYPE;
 

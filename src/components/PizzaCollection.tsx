@@ -14,7 +14,7 @@ import Search from "./Search";
 type PizzaCollectionProps = PizzaCollection_TYPE & {
   showMenuMobile: () => void
 };
-
+console.log()
 const PizzaCollection: React.FC<PizzaCollectionProps> = ({ searchDelay, showMenuMobile }) => {
 
   const { status, items: pizzaItems } = useSelector(pizzaSelector);
@@ -28,10 +28,10 @@ const PizzaCollection: React.FC<PizzaCollectionProps> = ({ searchDelay, showMenu
   ));
   return (
     <div>
-      <div className={styles.titleGroup}>
-        <h2 onClick={() => showMenuMobile()} className={styles.title}>
-          {title}
-        </h2>
+      <div className={styles.titleGroup}>  
+          <h2 onClick={() => showMenuMobile()} className={styles.title}>
+            {title}
+          </h2>
         <Search searchDelay={searchDelay} />
       </div>
       <main className={styles.pizzaCollections}>

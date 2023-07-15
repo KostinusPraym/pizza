@@ -1,4 +1,4 @@
-*{
+* {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -8,24 +8,31 @@ body {
   font-size: 16px;
   background-color: #ffdf8c;
 }
+#root {
+  width: 100%;
+  padding: 50px 0;
+}
 .container {
+  width: 100%;
   max-width: 1300px;
   margin: 0 auto;
   background-color: #fff;
   padding: 50px;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-radius: 16px;
 }
+
 .homeContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
+
 .containerNotFound {
   display: flex;
   justify-content: center;
 }
+
 .overlay {
   padding: 30px;
   top: 0;
@@ -40,25 +47,25 @@ body {
 .overlay__container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
-
-
-.fixed{
+.fixed {
   position: fixed;
 }
 
-
 @media only screen and (max-width: 1024px) {
-  .container{
-    padding: 25px;
-    border-radius: 0px;
-
-  }
-
   body {
     font-size: 12px;
+  }
+
+  #root {
+    padding: 0;
+  }
+
+  .container {
+    padding: 25px;
+    border-radius: 0px;
   }
 
   .homeContainer {
@@ -67,9 +74,8 @@ body {
   }
 }
 
-
 @media only screen and (max-width: 425px) {
-  .container{
+  .container {
     padding: 15px;
   }
 }
