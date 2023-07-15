@@ -45,7 +45,7 @@ const Home: React.FC = () => {
     debounce((str: string) => {
       dispatch(setTextForSearch(str));
     }, 350),
-    [dispatch]
+    [dispatch, debounce, setTextForSearch]
   );
 
   // //get data with query string
