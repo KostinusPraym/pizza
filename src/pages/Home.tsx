@@ -80,7 +80,7 @@ const Home: React.FC = () => {
       );
       window.scrollTo(0, 0);
     }
-  }, [categoryIndex, sortOptions, currentPage, textForSearch]);
+  }, [categoryIndex, sortOptions, currentPage, textForSearch, dispatch]);
 
   //set query string
   React.useEffect(() => {
