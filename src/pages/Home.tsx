@@ -6,7 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../redux/store";
 import { SortOption_TYPE } from "../types/types";
 
-import { Status, fetchPizza, pizzaSelector, setMobileMenu } from "../redux/slices/pizzaSlice";
+import {
+  Status,
+  fetchPizza,
+  pizzaSelector,
+  setMobileMenu,
+} from "../redux/slices/pizzaSlice";
 import {
   filterSelector,
   setFilters,
@@ -40,7 +45,7 @@ const Home: React.FC = () => {
     debounce((str: string) => {
       dispatch(setTextForSearch(str));
     }, 350),
-    [debounce]
+    [dispatch]
   );
 
   // //get data with query string
@@ -59,6 +64,22 @@ const Home: React.FC = () => {
   React.useEffect(() => {
     if (!isSearch.current) getPizza();
     isSearch.current = false;
+
+    async function getPizza() {
+      const category = categoryIndex ? `category=${categoryIndex}&` : "";
+      const options = `sortBy=${sortOptions.propertyValue}&order=desc`;
+      const search = textForSearch ? `search=${textForSearch}` : "";
+
+      dispatch(
+        fetchPizza({
+          category,
+          options,
+          search,
+          currentPage,
+        })
+      );
+      window.scrollTo(0, 0);
+    }
   }, [categoryIndex, sortOptions, currentPage, textForSearch]);
 
   //set query string
@@ -74,24 +95,8 @@ const Home: React.FC = () => {
     isMounted.current = true;
   }, [categoryIndex, sortOptions, currentPage, textForSearch, navigate]);
 
-  async function getPizza() {
-    const category = categoryIndex ? `category=${categoryIndex}&` : "";
-    const options = `sortBy=${sortOptions.propertyValue}&order=desc`;
-    const search = textForSearch ? `search=${textForSearch}` : "";
-
-    dispatch(
-      fetchPizza({
-        category,
-        options,
-        search,
-        currentPage,
-      })
-    );
-    window.scrollTo(0, 0);
-  }
-
   const showMenuMobile = () => {
-    dispatch(setMobileMenu(!mobileMenu))
+    dispatch(setMobileMenu(!mobileMenu));
   };
 
   if (status === Status.ERROR) return <Error />;
