@@ -1,0 +1,134 @@
+.pizzaItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 273px;
+
+  .name {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .optionsBlock {
+    width: 100%;
+    padding: 8px;
+    background-color: #f3f3f3;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 17px;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .active {
+      background-color: #fff;
+    }
+
+    .optionsSection {
+      display: flex;
+      width: 100%;
+    }
+
+    .options {
+      padding: 8px 4px;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+
+  .submitRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .price {
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    .buttonContainer {
+      position: relative;
+      cursor: pointer;
+
+      .addButton {
+        width: 130px;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid #eb5a1e;
+        color: #eb5a1e;
+        font-weight: 700;
+        border-radius: 24px;
+        font-size: 15px;
+        transition: all 0.1s ease-in-out;
+      }
+
+      .cross {
+        position: absolute;
+        top: 15px;
+        left: 14px;
+      }
+
+      .counterOrder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        width: 19px;
+        height: 19px;
+        background-color: #eb5a1e;
+        border-radius: 50%;
+        color: white;
+      }
+
+      &:hover {
+        .addButton {
+          color: #fff;
+          background-color: #eb5a1e;
+          border: 1px solid #eb5a1e;
+        }
+
+        .cross {
+          fill: #fff;
+        }
+
+        .counterOrder {
+          color: #eb5a1e;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 760px) {
+  .pizzaItem {
+    width: 240px;
+
+    & > img {
+      width: 240px;
+      height: 240px;
+    }
+
+    .submitRow {
+      .price {
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.sortBlock {
+  text-align: right;
+  position: relative;
+}
+
+.currentItem {
+  display: inline-block;
+  text-align: right;
+  color: #fe5f1e;
+  border-bottom: 1px #fe5f1e dashed;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.itemBlock {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px #7976765b;
+  overflow: hidden;
+  min-width: 200px;
+  background-color: #fff;
+
+  & li {
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: #fe5f1e0d;
+      color: #fe5f1e;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .itemBlock {
+    top: 30px;
+    right: auto;
+    left: 0;
+  }
+}
