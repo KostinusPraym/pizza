@@ -40,7 +40,7 @@ const Home: React.FC = () => {
     debounce((str: string) => {
       dispatch(setTextForSearch(str));
     }, 350),
-    []
+    [debounce]
   );
 
   // //get data with query string
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
       navigate(`?${queryString}`);
     }
     isMounted.current = true;
-  }, [categoryIndex, sortOptions, currentPage, textForSearch]);
+  }, [categoryIndex, sortOptions, currentPage, textForSearch, navigate]);
 
   async function getPizza() {
     const category = categoryIndex ? `category=${categoryIndex}&` : "";
