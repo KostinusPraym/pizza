@@ -1,2 +1,2 @@
 # pizza
-`https://pizza-from-kostya.netlify.app/`
+`https://pizza-from-kostya.netlify.app`
