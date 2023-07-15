@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../styles/Navigation.module.scss"
+import styles from "../styles/Navigation.module.scss";
 
 import {
   filterSelector,
@@ -16,11 +16,11 @@ const Overlay: React.FC<OverlayProps> = ({ showMenuMobile }) => {
   const dispatch = useDispatch();
   const { categories, categoryIndex } = useSelector(filterSelector);
 
-  const clickOnCategory = React.useCallback((index: number) => {
+  const clickOnCategory = (index: number) => {
     dispatch(setCategoryIndex({ index }));
     dispatch(setCurrentPage({ value: 1 }));
     showMenuMobile();
-  }, []);
+  };
 
   return (
     <div className="overlay">
@@ -28,10 +28,10 @@ const Overlay: React.FC<OverlayProps> = ({ showMenuMobile }) => {
         <ul className="overlay__container">
           {categories.map((item: string, index: number) => {
             return (
-                <li
+              <li
                 key={item}
                 className={`${styles.categoryItem} ${
-                  categoryIndex == index ? styles.active : ""
+                  categoryIndex === index ? styles.active : ""
                 }`}
                 onClick={() => clickOnCategory(index)}
               >

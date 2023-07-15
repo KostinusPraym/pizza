@@ -33,11 +33,11 @@ const PizzaCard: React.FC = () => {
     };
     fetchData();
     window.scrollTo(0, 60);
-  }, []);
+  }, [id]);
 
   React.useEffect(() => {
     dispatch(setIdCard(String(id)));
-  }, []);
+  }, [dispatch, id]);
 
   const handleClick = (index: number) => {
     dispatch(setSelectedOptions({ ...extraOptions[index], index }));

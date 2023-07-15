@@ -81,7 +81,7 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
                   key={`${id}${item}`}
                   onClick={() => setOptionsSectionOne(types[index])}
                   className={`${styles.options} ${
-                    optionsSectionOne == item ? styles.active : ""
+                    optionsSectionOne === item ? styles.active : ""
                   } `}
                 >
                   {doughArr[item]}
@@ -96,7 +96,7 @@ const PizzaItem: React.FC<PizzaItemProps> = ({
                   key={`${id}${item}`}
                   onClick={() => clickForSelectSize(index)}
                   className={`${styles.options} ${
-                    optionsSectionTwo == item ? styles.active : ""
+                    optionsSectionTwo === item ? styles.active : ""
                   } `}
                 >
                   {`${item} см`}

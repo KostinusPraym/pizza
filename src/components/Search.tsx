@@ -13,7 +13,7 @@ const Search: React.FC<SearchProps> = ({ searchDelay }) => {
   const onChangeInput = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setTextForInput(event.target.value))
     searchDelay(event.target.value);
-  },[])
+  },[searchDelay, dispatch])
   
   return (
     <div>

@@ -60,7 +60,7 @@ const CartItem: React.FC<CartItemProps> = ({
         </div>
       </div>
       <div className={styles.orderAmount}>
-        <button disabled={order.amount == 1} onClick={onClickMinus} className={styles.btnMinus}></button>
+        <button disabled={order.amount === 1} onClick={onClickMinus} className={styles.btnMinus}></button>
         <p>{amount}</p>
         <button  onClick={onClickPlus} className={styles.btnPlus}></button>
       </div>

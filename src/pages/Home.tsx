@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       dispatch(setFilters({ ...parseString, select }));
       isSearch.current = true;
     }
-  }, []);
+  }, [SORT_OPTIONS, dispatch]);
 
   // //get data
   React.useEffect(() => {

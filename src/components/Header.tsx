@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       localStorage.setItem("cart", json);
     }
     isMounted.current = true;
-  }, [amountOrders]);
+  }, [amountOrders, cartItems]);
 
   return (
     <header className={styles.header}>

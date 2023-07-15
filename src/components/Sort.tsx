@@ -33,7 +33,7 @@ const Sort: React.FC = React.memo(
   
       document.body.addEventListener("click", handleClick);
       return () => document.body.removeEventListener("click", handleClick);
-    }, []); 
+    }, [dispatch]); 
     
     return (
       <div ref={sortBlockRef} className={styles.sortBlock}>

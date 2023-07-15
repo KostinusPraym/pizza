@@ -7,10 +7,12 @@ import { filterSelector, setCategoryIndex, setCurrentPage } from "../redux/slice
 const Navigation: React.FC = React.memo(() => {
   const dispatch = useDispatch();
   const {categories, categoryIndex } = useSelector(filterSelector)
-  const clickOnCategory = React.useCallback((index: number) => {
+
+  const clickOnCategory = (index: number) => {
     dispatch(setCategoryIndex({ index }));
     dispatch(setCurrentPage({value: 1}));
-  },[])
+  }
+
   return (
     <nav>
       <ul className={styles.categoryList}>
@@ -19,7 +21,7 @@ const Navigation: React.FC = React.memo(() => {
             <li
               key={item}
               className={`${styles.categoryItem} ${
-                categoryIndex == index ? styles.active : ""
+                categoryIndex === index ? styles.active : ""
               }`}
               onClick={() => clickOnCategory(index)}
             >
