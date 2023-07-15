@@ -1,41 +1,64 @@
-.titleGroup{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    gap: 10px;
+.titleGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
 }
 
-.title{
-    line-height: 40px;
-    font-weight: 700;
-    font-size: 32px;
+.title {
+  line-height: 40px;
+  font-weight: 700;
+  font-size: 32px;
 }
 
-.pizzaCollections{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
-    margin-bottom: 30px;
+.pizzaCollections {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1297px) {
+  .pizzaCollections {
+    max-width: 890px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .title{
-        text-decoration: underline
+  .title {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 989px) {
+  .pizzaCollections {
+    max-width: 582px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+    .pizzaCollections {
+      max-width: 518px;
     }
   }
 
-  @media only screen and (max-width: 570px) {
-    .title{
-        font-size: 24px;
-    }
+@media only screen and (max-width: 570px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+    .pizzaCollections {
+        max-width: 240px;
+      }
   }
 
-  @media only screen and (max-width: 450px) {
-    .titleGroup{
-        flex-wrap: wrap;
-        gap: 3px;
-
-    }
+@media only screen and (max-width: 450px) {
+  .titleGroup {
+    flex-wrap: wrap;
+    gap: 3px;
   }
+}

@@ -12,7 +12,7 @@ const App = () => {
   const { mobileMenu } = useSelector(pizzaSelector);
 
   return (
-    <div className={`container + ${mobileMenu ? "fixed" : ""}`}>
+    <div className={`container ${mobileMenu ? "fixed" : ""}`}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
