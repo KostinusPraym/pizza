@@ -2,7 +2,7 @@
 `https://pizza-from-kostya.netlify.app`
 
 🛠 Технологии:
-- **ReactJS 18**
+- **ReactJS**
 - **TypeScript**
 - **Redux Toolkit** 
 - **React Router v6** 
